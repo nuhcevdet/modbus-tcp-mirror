@@ -1,0 +1,47 @@
+# Source PLC (device to connect as Modbus Master)
+source:
+  ip: "192.168.1.10"
+  port: 502
+  slave_id: 1
+  timeout_ms: 3000
+  polling_interval_ms: 1000
+  retry_count: 3
+  retry_delay_ms: 500
+
+# Modbus Slave Server (this application)
+server:
+  ip: "0.0.0.0"
+  port: 5020
+  slave_id: 1
+
+# Register blocks to read from source
+register_blocks:
+  - name: "holding_registers_block1"
+    function: "holding_register"   # holding_register, input_register, coil, discrete_input
+    start_address: 0
+    count: 100
+
+  - name: "holding_registers_block2"
+    function: "holding_register"
+    start_address: 100
+    count: 50
+
+  - name: "input_registers_block1"
+    function: "input_register"
+    start_address: 0
+    count: 50
+
+  - name: "coils_block1"
+    function: "coil"
+    start_address: 0
+    count: 64
+
+  - name: "discrete_inputs_block1"
+    function: "discrete_input"
+    start_address: 0
+    count: 64
+
+# Logging
+logging:
+  level: "info"          # debug, info, warn, error
+  log_data_changes: true # log data changes
