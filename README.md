@@ -23,15 +23,15 @@ A lightweight Go application that creates an exact replica of a Modbus TCP devic
 ## Installation
 
 ```bash
-go install github.com/youruser/modbus-mirror@latest
+go install github.com/nuhcevdet/modbus-tcp-mirror@latest
 ```
 
 Or build from source:
 
 ```bash
-git clone https://github.com/youruser/modbus-mirror.git
-cd modbus-mirror
-go build -o modbus-mirror .
+git clone https://github.com/nuhcevdet/modbus-tcp-mirror.git
+cd modbus-tcp-mirror
+go build -o modbus-tcp-mirror .
 ```
 
 ## Quick Start
@@ -46,7 +46,7 @@ cp config.yaml config.yaml
 2. Run:
 
 ```bash
-./modbus-mirror -config config.yaml
+./modbus-tcp-mirror -config config.yaml
 ```
 
 ## Configuration
